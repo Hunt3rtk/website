@@ -12,6 +12,7 @@
     --darkneonswampgreen: #86A63C;
     --blueblack: #0B1226;
     --bluegrey: #101B38;
+    --grey: #cacaca;
 }
 
 html {
@@ -36,8 +37,6 @@ main {
     align-items: center;
 }
 
-
-
 .profile h1 {
     width: 100%;
     text-align: center;
@@ -57,7 +56,7 @@ main {
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .1em; /* Adjust as needed */
     animation: 
-    typing 1.5s steps(100, end),
+    typing 1s steps(100, end),
     blink-caret .40s step-end infinite;
 }
 
@@ -151,4 +150,23 @@ main section {
             width: 80%;
             margin: 10px;
         }
+    }
+
+    .infobox p {
+        text-align: left;
+        text-transform: lowercase;
+    }
+
+    .project_icon {
+        width: 72px;
+        height: 72px;
+        margin: 5px;
+        border-radius: 50%;
+        box-shadow: gray 0px 0px 2px 1px;
+    }
+
+    .project_icon:hover {
+        width: 80px;
+        height: 80px;
+        box-shadow: gray 0px 0px 4px 2px;;
     }
