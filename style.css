@@ -6,7 +6,7 @@
     --darkyellow: #E8A12E;
     --purple: #350E36;
     --murkyblue: #696191;
-    --murkybluelight: #6E65C7;
+    --murkybluelight: #6e65c7;
     --swampgreen: #C8CD7D;
     --neonswampgreen: #CCFC5B;
     --darkneonswampgreen: #86A63C;
@@ -114,20 +114,24 @@ main section {
     flex-wrap: wrap;
     align-items: center;
     text-align: center;
-    margin: 10%;
+    justify-content: center;
+    margin: 10px;
 }
 
 /*Info Boxes*/
     .infobox {
         width: 20%;
         height: 300px;
-        /*background-image: linear-gradient(to top left, var(--bluegrey), var(--murkyblue));*/
+        margin: 10px;
+        background-image: linear-gradient(to bottom, rgb(1,0,0,0) 40%, var(--murkyblue));
         border: 1px solid var(--neonswampgreen);
         border-radius: 10px;
         box-shadow: gray 0px 0px 10px 2px;
         padding: 20px;
 
         font-weight: 600;
+
+        overflow: hidden;
     }
 
     .infobox hr {
@@ -138,7 +142,7 @@ main section {
         box-shadow: gray 0px 0px 15px 3px;
     }
 
-    @media only screen and (max-width: 1100px) {
+    @media only screen and (max-width: 1270px) {
         .infobox {
             width: 40%;
             margin: 10px;
@@ -155,6 +159,56 @@ main section {
     .infobox p {
         text-align: left;
         text-transform: lowercase;
+    }
+
+    .infobox img {
+        height: 48px;
+        width: auto;
+        margin: 7px;
+        align-items: center;
+    }
+
+    .infobox section {
+        opacity: 0.5;
+    }
+
+    .infobox button {
+        color: var(--bluegrey);
+        font-family: "Ubuntu", sans-serif;
+        font-weight: 700;
+        text-transform: lowercase;
+
+        z-index: 1;
+        position: relative;
+        bottom: -180px;
+
+        width: 90px;
+        height: 30px;
+        justify-content: center;
+        margin: auto;
+
+        border: none;
+        background-image: linear-gradient(var(--neonswampgreen), var(--darkneonswampgreen));
+        box-shadow: gray 0px 0px 4px 2px;;
+        border-radius: 15px;
+
+        cursor: pointer;
+        
+    }
+
+    .infobox button:hover {
+        background-image: linear-gradient(var(--darkneonswampgreen), var(--neonswampgreen));
+        box-shadow: gray 0px 0px 6px 3px;
+    }
+
+    #education_section {
+        opacity: 1;
+    }
+
+    #ufv_icon {
+        border-radius: 50%;
+        float: right;
+        display: inline;
     }
 
     .project_icon {
