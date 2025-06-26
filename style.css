@@ -157,8 +157,11 @@ main section {
     }
 
     .infobox p {
+        display: inline;
+        float: left;
         text-align: left;
-        text-transform: lowercase;
+        overflow: hidden;
+        text-wrap: nowrap;
     }
 
     .infobox img {
@@ -209,7 +212,7 @@ main section {
 
     #ufv_icon {
         border-radius: 50%;
-        float: right;
+        float: left;
         display: inline;
     }
 
