@@ -142,6 +142,11 @@ main section {
         box-shadow: gray 0px 0px 15px 3px;
     }
 
+    #volunteer:target {
+        width: 40%;
+        height: 600px;
+    }
+
     @media only screen and (max-width: 1270px) {
         .infobox {
             width: 40%;
@@ -161,7 +166,8 @@ main section {
         float: left;
         text-align: left;
         overflow: hidden;
-        text-wrap: nowrap;
+        text-transform: none;
+        color: var(--grey);
     }
 
     .infobox img {
@@ -208,12 +214,15 @@ main section {
 
     #education_section {
         opacity: 1;
+        flex-wrap: nowrap;
+        justify-content: start;
     }
 
     #ufv_icon {
         border-radius: 50%;
         float: left;
         display: inline;
+        justify-self: start;
     }
 
     .project_icon {
