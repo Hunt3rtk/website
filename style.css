@@ -18,6 +18,7 @@
 html {
     font-family: "Ubuntu", sans-serif;
     color: var(--neonswampgreen);
+    padding: -100%;
 }
 
 body {
