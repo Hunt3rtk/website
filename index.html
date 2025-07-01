@@ -21,7 +21,7 @@
                     <a href="https://www.linkedin.com/in/hunter-klassen0123/"  target="_blank"><img src="images/linkedin.png"/></a>
                 </div>
             </div>
-            <section>
+            <section class="infobox_container">
                 <div class="infobox">
                     <h1>EXPERIENCES</h1>
                     <hr/>
@@ -58,23 +58,5 @@
                 </div>
             </section>
         </main>
-
-        <script>
-            var coll = document.getElementsByClassName(".infobox button");
-            var i;
-
-            for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                content.style.display = "none";
-                } else {
-                content.style.display = "block";
-                }
-            });
-            }
-        </script>
-
     </body>
 </html>
