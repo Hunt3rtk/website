@@ -108,10 +108,16 @@ main {
     box-shadow: gray 0px 0px 15px 3px;
 }
 
+#infobox_container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    transition: .3s;
+}
+
 main section {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
-    flex-wrap: nowrap;
     align-items: center;
     text-align: center;
     justify-content: center;
@@ -120,7 +126,6 @@ main section {
 
 /*Info Boxes*/
     .infobox {
-        width: 20%;
         height: 300px;
         margin: 10px;
         background-image: linear-gradient(to bottom, rgb(1,0,0,0) 40%, var(--murkyblue));
@@ -129,9 +134,16 @@ main section {
         box-shadow: gray 0px 0px 10px 2px;
         padding: 20px;
 
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+
         font-weight: 600;
 
         overflow: hidden;
+
+        transition: .3s;
     }
 
     .infobox hr {
@@ -140,13 +152,6 @@ main section {
 
     .infobox:hover {
         box-shadow: gray 0px 0px 15px 3px;
-    }
-
-    #volunteer:target {
-        transition: width .2s;
-        position: static;
-        width: 40%;
-        height: 600px;
     }
 
     @media only screen and (max-width: 1270px) {
@@ -190,12 +195,12 @@ main section {
         text-transform: lowercase;
 
         z-index: 1;
-        position: relative;
-        bottom: -180px;
-
+        position: absolute;
+        bottom: 20px;
         width: 90px;
         height: 30px;
-        justify-content: center;
+        left: 0;
+        right: 0;
         margin: auto;
 
         border: none;
@@ -206,7 +211,6 @@ main section {
         border-radius: 15px;
 
         cursor: pointer;
-        
     }
 
     .infobox button:hover {
@@ -219,6 +223,7 @@ main section {
         flex-wrap: nowrap;
         justify-content: start;
     }
+    
 
     #ufv_icon {
         border-radius: 50%;

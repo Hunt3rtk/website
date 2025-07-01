@@ -21,42 +21,186 @@
                     <a href="https://www.linkedin.com/in/hunter-klassen0123/"  target="_blank"><img src="images/linkedin.png"/></a>
                 </div>
             </div>
-            <section class="infobox_container">
-                <div class="infobox">
+            <section id="infobox_container">
+                <div class="infobox" id="experiences_infobox">
                     <h1>EXPERIENCES</h1>
                     <hr/>
-                    <button>See More</button>
                     <section>
                         <img src="images/cascade_aerospace.png"/>
                         <img src="images/northview.png"/>
                         <img src="images/ea.svg"/>
                         <img src="images/unity_logo.png"/>
                         <img src="images/LizardWarriorHeadshotCropped3.png"/>
-
                     </section>
+                    <button onclick="experiencesExpansion()">See More</button>
                 </div>
-                <div class="infobox">
+                <div class="infobox" id="education_infobox">
                     <h1>EDUCATION</h1>
                     <hr/>
-                    <button>See More</button>
                     <section id="education_section">
                         <img src="images/ufv.jfif" id="ufv_icon"/>
                         <div class="content">
                             <p>UNIVERSITY OF THE FRASER VALLEY | BSC COMPUTER SCIENCE</p>
                         </div>
                     </section>
+                    <button onclick="educationExpansion()">See More</button>
                 </div>
-                <div class="infobox">
+                <div class="infobox" id="skills_infobox">
                     <h1>SKILLS</h1>
                     <hr/>
-                    <button>See More</button>
+                    <button onclick="skillsExpansion()">See More</button>
                 </div>
-                <div class="infobox" id="volunteer">
+                <div class="infobox" id="volunteer_infobox">
                     <h1>VOLUNTEERING</h1>
                     <hr/>
-                    <button><a href="#volunteer">See More</a></button>
+                    <button onclick="volunteerExpansion()">See More</a></button>
                 </div>
             </section>
         </main>
     </body>
+    <script>
+
+        let experiences_clicked = false;
+        let education_clicked = false;
+        let skills_clicked = false;
+        let volunteer_clicked = false;
+
+        
+        function experiencesExpansion() {
+            if (experiences_clicked == false) {
+                document.getElementById('infobox_container').style.gridTemplateColumns='55% 15% 15% 15%';
+
+                document.getElementById('experiences_infobox').style.height='600px';
+
+                document.getElementById('education_infobox').style.height='300px';
+
+                document.getElementById('skills_infobox').style.height='300px';
+
+                document.getElementById('volunteering_infobox').style.height='300px';
+
+                experiences_clicked = true;
+                education_clicked = false;
+                skills_clicked = false;
+                volunteer_clicked = true;
+            } else if (experiences_clicked == true) {
+                document.getElementById('infobox_container').style.gridTemplateColumns='25% 25% 25% 25%';
+                
+                document.getElementById('experiences_infobox').style.height='300px';
+
+                document.getElementById('education_infobox').style.height='300px';
+
+                document.getElementById('skills_infobox').style.height='300px';
+
+                document.getElementById('volunteer_infobox').style.height='300px';
+
+                experiences_clicked = false;
+                education_clicked = false;
+                skills_clicked = false;
+                volunteer_clicked = false;
+            }
+        }
+ 
+        function educationExpansion() {
+            if (education_clicked == false) {
+                document.getElementById('infobox_container').style.gridTemplateColumns='15% 55% 15% 15%';
+
+                document.getElementById('experiences_infobox').style.height='600px';
+
+                document.getElementById('education_infobox').style.height='600px';
+
+                document.getElementById('skills_infobox').style.height='300px';
+
+                document.getElementById('volunteering_infobox').style.height='300px';
+
+                experiences_clicked = false;
+                education_clicked = true;
+                skills_clicked = false;
+                volunteer_clicked = false;
+            } else if (education_clicked == true) {
+                document.getElementById('education_container').style.gridTemplateColumns='25% 25% 25% 25%';
+
+                document.getElementById('experiences_infobox').style.height='300px';
+
+                document.getElementById('education_infobox').style.height='300px';
+
+                document.getElementById('skills_infobox').style.height='300px';
+
+                document.getElementById('volunteer_infobox').style.height='300px';
+
+                experiences_clicked = false;
+                education_clicked = false;
+                skills_clicked = false;
+                volunteer_clicked = false;
+            }
+        }
+ 
+        function skillsExpansion() {
+            if (skills_clicked == false) {
+                document.getElementById('infobox_container').style.gridTemplateColumns='15% 15% 55% 15%';
+
+                document.getElementById('experiences_infobox').style.height='600px';
+
+                document.getElementById('education_infobox').style.height='300px';
+
+                document.getElementById('skills_infobox').style.height='600px';
+
+                document.getElementById('volunteering_infobox').style.height='300px';
+
+                experiences_clicked = false;
+                education_clicked = false;
+                skills_clicked = true;
+                volunteer_clicked = false;
+            } else if (skills_clicked == true) {
+                document.getElementById('infobox_container').style.gridTemplateColumns='25% 25% 25% 25%';
+
+                document.getElementById('experiences_infobox').style.height='300px';
+
+                document.getElementById('education_infobox').style.height='300px';
+
+                document.getElementById('skills_infobox').style.height='300px';
+
+                document.getElementById('volunteer_infobox').style.height='300px';
+
+                experiences_clicked = false;
+                education_clicked = false;
+                skills_clicked = false;
+                volunteer_clicked = false;
+            }
+        }
+
+        function volunteerExpansion() {
+            if (volunteer_clicked == false) {
+                document.getElementById('infobox_container').style.gridTemplateColumns='15% 15% 15% 55%';
+
+                document.getElementById('experiences_infobox').style.height='300px';
+
+                document.getElementById('education_infobox').style.height='300px';
+
+                document.getElementById('skills_infobox').style.height='300px';
+
+                document.getElementById('volunteering_infobox').style.height='600px';
+
+                experiences_clicked = false;
+                education_clicked = false;
+                skills_clicked = false;
+                volunteer_clicked = true;
+            } else if (volunteer_clicked == true) {
+                document.getElementById('infobox_container').style.gridTemplateColumns='25% 25% 25% 25%';
+
+                document.getElementById('experiences_infobox').style.height='300px';
+
+                document.getElementById('education_infobox').style.height='300px';
+
+                document.getElementById('skills_infobox').style.height='300px';
+
+                document.getElementById('volunteer_infobox').style.height='300px';
+
+                experiences_clicked = false;
+                education_clicked = false;
+                skills_clicked = false;
+                volunteer_clicked = false;
+            }
+        }
+        
+    </script>
 </html>
