@@ -155,16 +155,24 @@ main section {
     }
 
     @media only screen and (max-width: 1270px) {
+        #infobox_container {
+            grid-template-columns: 33% 33% 33%;
+        }
+
         .infobox {
-            width: 40%;
-            margin: 10px;
+            padding: 0;
+            margin: 1px;
         }
     }
 
     @media only screen and (max-width: 774px) {
+        #infobox_container {
+            grid-template-columns: 50% 50%;
+        }
+
         .infobox {
-            width: 80%;
-            margin: 10px;
+            padding: 0;
+            margin: 1px;
         }
     }
 
