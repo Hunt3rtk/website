@@ -109,12 +109,6 @@ main {
     box-shadow: gray 0px 0px 15px 3px;
 }
 
-#infobox_container {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    transition: .3s;
-}
-
 main section {
     display: flex;
     flex-wrap: wrap;
@@ -125,7 +119,16 @@ main section {
     margin: 10px;
 }
 
-/*Info Boxes*/
+
+
+/* INFO BOXES */
+
+    #infobox_container {
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        transition: .3s;
+    }
+
     .infobox {
         height: 300px;
         margin: 10px;
@@ -157,14 +160,40 @@ main section {
 
     @media only screen and (max-width: 1270px) {
         #infobox_container {
-            grid-template-columns: 50% 50%;
+            display: grid;
+            grid-template-areas:
+                'experience experience education education'
+                'skill skill volunteer volunteer';
+            transition: .3s;
+        }
+
+        #experiences_infobox {
+            grid-area: experience;
+        }
+
+        #education_infobox {
+            grid-area: education;
+        }
+
+        #skills_infobox {
+            grid-area: skill;
+        }
+
+        #volunteer_infobox {
+            grid-area: volunteer;
         }
 
     }
 
     @media only screen and (max-width: 774px) {
         #infobox_container {
-            grid-template-columns: 80%;
+            display: grid;
+            grid-template-areas:
+                'experience experience experience experience'
+                'education education education education'
+                'skill skill skill skill'
+                'volunteer volunteer volunteer volunteer';
+            transition: .3s;
         }
 
     }
@@ -219,6 +248,8 @@ main section {
         box-shadow: gray 0px 0px 6px 3px;
     }
 
+    /* EDUCATION INFOBOX */
+
     #education_section {
         opacity: 1;
         flex-wrap: nowrap;
@@ -231,18 +262,4 @@ main section {
         float: left;
         display: inline;
         justify-self: start;
-    }
-
-    .project_icon {
-        width: 72px;
-        height: 72px;
-        margin: 5px;
-        border-radius: 50%;
-        box-shadow: gray 0px 0px 2px 1px;
-    }
-
-    .project_icon:hover {
-        width: 80px;
-        height: 80px;
-        box-shadow: gray 0px 0px 4px 2px;;
     }
