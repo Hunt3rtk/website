@@ -278,6 +278,10 @@ main section {
 
     /* SKILL INFOBOX */
 
+    #skills_section img {
+        height: 64px;
+    }
+
     #skills_section_expanded {
         display: none;
     }
