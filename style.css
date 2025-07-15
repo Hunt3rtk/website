@@ -125,169 +125,223 @@ main section {
 
 /* INFO BOXES */
 
+#infobox_container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    transition: .3s;
+}
+
+.infobox {
+    height: 300px;
+    margin: 10px;
+    background-image: linear-gradient(to bottom, rgb(1,0,0,0) 40%, var(--murkyblue));
+    border: 1px solid var(--neonswampgreen);
+    border-radius: 10px;
+    box-shadow: gray 0px 0px 10px 2px;
+    padding: 20px;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    font-weight: 600;
+
+    overflow: hidden;
+
+    transition: .3s;
+}
+
+.infobox hr {
+    border-color: var(--neonswampgreen);
+}
+
+.infobox:hover {
+    box-shadow: gray 0px 0px 15px 3px;
+}
+
+@media only screen and (max-width: 1270px) {
     #infobox_container {
         display: grid;
-        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-areas:
+            'experience experience education education'
+            'skill skill volunteer volunteer';
         transition: .3s;
     }
 
-    .infobox {
-        height: 300px;
-        margin: 10px;
-        background-image: linear-gradient(to bottom, rgb(1,0,0,0) 40%, var(--murkyblue));
-        border: 1px solid var(--neonswampgreen);
-        border-radius: 10px;
-        box-shadow: gray 0px 0px 10px 2px;
-        padding: 20px;
+    #experiences_infobox {
+        grid-area: experience;
+    }
 
-        align-items: center;
-        justify-content: center;
+    #education_infobox {
+        grid-area: education;
+    }
 
-        position: relative;
+    #skills_infobox {
+        grid-area: skill;
+    }
 
-        font-weight: 600;
+    #volunteer_infobox {
+        grid-area: volunteer;
+    }
 
-        overflow: hidden;
+}
 
+@media only screen and (max-width: 774px) {
+    #infobox_container {
+        display: grid;
+        grid-template-areas:
+            'experience experience experience experience'
+            'education education education education'
+            'skill skill skill skill'
+            'volunteer volunteer volunteer volunteer';
         transition: .3s;
     }
 
-    .infobox hr {
-        border-color: var(--neonswampgreen);
-    }
+}
 
-    .infobox:hover {
-        box-shadow: gray 0px 0px 15px 3px;
-    }
+.infobox p {
+    display: inline;
+    float: left;
+    text-align: left;
+    overflow: hidden;
+    text-transform: none;
+    color: var(--grey);
+}
 
-    @media only screen and (max-width: 1270px) {
-        #infobox_container {
-            display: grid;
-            grid-template-areas:
-                'experience experience education education'
-                'skill skill volunteer volunteer';
-            transition: .3s;
-        }
+.infobox img {
+    height: 48px;
+    width: auto;
+    margin: 7px;
+    align-items: center;
+}
 
-        #experiences_infobox {
-            grid-area: experience;
-        }
+.infobox section {
+    opacity: 0.5;
+}
 
-        #education_infobox {
-            grid-area: education;
-        }
+.infobox button {
+    color: var(--bluegrey);
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    text-transform: lowercase;
 
-        #skills_infobox {
-            grid-area: skill;
-        }
+    z-index: 1;
+    position: absolute;
+    bottom: 20px;
+    width: 90px;
+    height: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
 
-        #volunteer_infobox {
-            grid-area: volunteer;
-        }
+    border: none;
+    background-image: linear-gradient(var(--neonswampgreen), var(--darkneonswampgreen));
+    box-shadow:
+        inset 0px 0px 6px 6px var(--darkneonswampgreen),
+        gray 0px 0px 4px 2px;
+    border-radius: 15px;
 
-    }
+    cursor: pointer;
+}
 
-    @media only screen and (max-width: 774px) {
-        #infobox_container {
-            display: grid;
-            grid-template-areas:
-                'experience experience experience experience'
-                'education education education education'
-                'skill skill skill skill'
-                'volunteer volunteer volunteer volunteer';
-            transition: .3s;
-        }
+.infobox button:hover {
+    background-image: linear-gradient(var(--darkneonswampgreen), var(--neonswampgreen));
+    box-shadow: gray 0px 0px 6px 3px;
+}
 
-    }
+/* EXPERIENCE INFOBOX */
 
-    .infobox p {
-        display: inline;
-        float: left;
-        text-align: left;
-        overflow: hidden;
-        text-transform: none;
-        color: var(--grey);
-    }
+#experiences_infobox {
+    display: block;
+}
 
-    .infobox img {
-        height: 48px;
-        width: auto;
-        margin: 7px;
-        align-items: center;
-    }
+#experiences_infobox_expanded {
+    display: none;
+}
 
-    .infobox section {
-        opacity: 0.5;
-    }
+#experience_section_expanded {
+    display: none;
+}
 
-    .infobox button {
-        color: var(--bluegrey);
-        font-family: "Ubuntu", sans-serif;
-        font-weight: 700;
-        text-transform: lowercase;
+/* EDUCATION INFOBOX */
 
-        z-index: 1;
-        position: absolute;
-        bottom: 20px;
-        width: 90px;
-        height: 30px;
-        left: 0;
-        right: 0;
-        margin: auto;
+#education_infobox {
+    display: block;
 
-        border: none;
-        background-image: linear-gradient(var(--neonswampgreen), var(--darkneonswampgreen));
-        box-shadow:
-            inset 0px 0px 6px 6px var(--darkneonswampgreen),
-            gray 0px 0px 4px 2px;
-        border-radius: 15px;
+}
 
-        cursor: pointer;
-    }
+#education_infobox_expanded {
+    display: none;
+}
 
-    .infobox button:hover {
-        background-image: linear-gradient(var(--darkneonswampgreen), var(--neonswampgreen));
-        box-shadow: gray 0px 0px 6px 3px;
-    }
+#education_section {
+    opacity: 1;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
 
-    /* EXPERIENCE INFOBOX */
+#education_section_expanded {
+    display: none;
+}
 
-    #experience_section_expanded {
-        display: none;
-    }
+#education_infobox {
+    display: block;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
 
-    /* EDUCATION INFOBOX */
 
-    #education_section {
-        opacity: 1;
-        flex-wrap: nowrap;
-        justify-content: start;
-    }
-    
+#ufv_icon {
+    border-radius: 50%;
+    float: left;
+    display: inline;
+    justify-self: start;
+}
 
-    #ufv_icon {
-        border-radius: 50%;
-        float: left;
-        display: inline;
-        justify-self: start;
-    }
+#education_section_expanded {
+    display: none;
+}
 
-    #education_section_expanded {
-        display: none;
-    }
+/* SKILL INFOBOX */
 
-    /* SKILL INFOBOX */
+#skills_infobox {
+    display: block;
+}
 
-    #skills_section img {
-        height: 64px;
-    }
+#skills_infobox_expanded {
+    display: none;
+    height: 600px;
+}
 
-    #skills_section_expanded {
-        display: none;
-    }
+#skills_section {
+    display: block;
+}
 
-    /* VOLUNTEER INFOBOX */
+#skills_section_expanded {
+    display: none;
+}
 
-    #volunteer_section_expanded {
-        display: none;
-    }
+#skills_section img {
+    height: 64px;
+}
+
+/* VOLUNTEER INFOBOX */
+
+#volunteer_infobox {
+    display: block;
+
+}
+
+#volunteer_infobox_expanded {
+    display: none;
+    height: 600px;
+}
+
+#volunteer_section {
+    display: block;
+}
+
+#volunteer_section_expanded {
+    display: none;
+}
