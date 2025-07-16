@@ -126,9 +126,12 @@ main section {
 /* INFO BOXES */
 
 #infobox_container {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
     transition: .3s;
+}
+
+.grid_infobox_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .infobox {
@@ -160,44 +163,10 @@ main section {
     box-shadow: gray 0px 0px 15px 3px;
 }
 
-@media only screen and (max-width: 1270px) {
-    #infobox_container {
-        display: grid;
-        grid-template-areas:
-            'experience experience education education'
-            'skill skill volunteer volunteer';
-        transition: .3s;
+@media only screen and (max-width: 1000px) {
+    #grid_infobox_container {
+        grid-template-columns: 1fr;
     }
-
-    #experiences_infobox {
-        grid-area: experience;
-    }
-
-    #education_infobox {
-        grid-area: education;
-    }
-
-    #skills_infobox {
-        grid-area: skill;
-    }
-
-    #volunteer_infobox {
-        grid-area: volunteer;
-    }
-
-}
-
-@media only screen and (max-width: 774px) {
-    #infobox_container {
-        display: grid;
-        grid-template-areas:
-            'experience experience experience experience'
-            'education education education education'
-            'skill skill skill skill'
-            'volunteer volunteer volunteer volunteer';
-        transition: .3s;
-    }
-
 }
 
 .infobox p {
@@ -248,6 +217,7 @@ main section {
 .infobox button:hover {
     background-image: linear-gradient(var(--darkneonswampgreen), var(--neonswampgreen));
     box-shadow: gray 0px 0px 6px 3px;
+    opacity: 1;
 }
 
 /* EXPERIENCE INFOBOX */
@@ -256,11 +226,19 @@ main section {
     display: block;
 }
 
+#experiences_infobox button {
+    opacity: 1;    
+}
+
 #experiences_infobox_expanded {
     display: none;
 }
 
-#experience_section_expanded {
+#experiences_section {
+
+}
+
+#experiences_section_expanded {
     display: none;
 }
 

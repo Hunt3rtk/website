@@ -8,16 +8,16 @@
         function expand(category) {
             switch (category) {
                 case 'experiences' && !experiences_clicked:
-                    handleExpansion('experiences');
+                    handleExpansion('experiences', '2fr 1fr 1fr 1fr');
                     break;
                 case 'education' && !education_clicked:
-                    handleExpansion('education');
+                    handleExpansion('education', '1fr 2fr 1fr 1fr');
                     break;
                 case 'skills' && !skills_clicked:
-                    handleExpansion('skills');
+                    handleExpansion('skills', '1fr 1fr 2fr 1fr');
                     break;
                 case 'volunteer' && !volunteer_clicked:
-                    handleExpansion('volunteer');
+                    handleExpansion('volunteer', '1fr 1fr 1fr 2fr');
                     break;
                 default:
                     break;
@@ -44,7 +44,7 @@
             }
         }
 
-        function handleExpansion(category) {
+        function handleExpansion(category, gridColumns) {
 
             //* Reset other sections *//
 
@@ -85,9 +85,18 @@
 
             //* Handle the expansion of the clicked section *//
 
+            let mobile = window.matchMedia("(max-width: 1000px)");
 
-            // Expand the clicked section
-            document.getElementById('infobox_container').style.gridTemplateColumns='55% 15% 15% 15%';
+            if (mobile.matches) {
+                return;
+            } else {
+                // Expand the clicked section
+                document.getElementById('grid_infobox_container').style.gridTemplateColumns= gridColumns;
+            }
+
+
+
+
 
             // Set the height and box shadow for the expanded section
             document.getElementById('${category}_infobox').style.height='600px';
@@ -105,8 +114,8 @@
             document.getElementById('experiences_infobox').style.height='300px';
             document.getElementById('experiences_infobox').style.boxShadow='gray 0px 0px 10px 2px';
 
-            document.getElementById('experience_section').style.display="block";
-            document.getElementById('experience_section_expanded').style.display="none";
+            document.getElementById('experiences_section').style.display="block";
+            document.getElementById('experiences_section_expanded').style.display="none";
 
             document.getElementById('experiences_infobox').getElementsByTagName('button')[0].innerHTML='see more';
 
@@ -130,8 +139,8 @@
                 document.getElementById('experiences_infobox').style.height='600px';
                 document.getElementById('experiences_infobox').style.boxShadow='inset 0px 0px 6px 6px var(--darkneonswampgreen), gray 0px 0px 10px 2px';
 
-                document.getElementById('experience_section').style.display="none";
-                document.getElementById('experience_section_expanded').style.display="block";
+                document.getElementById('experiences_section').style.display="none";
+                document.getElementById('experiences_section_expanded').style.display="block";
 
                 document.getElementById('experiences_infobox').getElementsByTagName('button')[0].innerHTML='see less';
 
@@ -161,8 +170,8 @@
                 document.getElementById('experiences_infobox').style.height='300px';
                 document.getElementById('experiences_infobox').style.boxShadow='gray 0px 0px 10px 2px';
 
-                document.getElementById('experience_section').style.display="block";
-                document.getElementById('experience_section_expanded').style.display="none";
+                document.getElementById('experiences_section').style.display="block";
+                document.getElementById('experiences_section_expanded').style.display="none";
 
                 document.getElementById('experiences_infobox').getElementsByTagName('button')[0].innerHTML='see more';
 
@@ -189,8 +198,8 @@
                 document.getElementById('infobox_container').style.gridTemplateColumns='15% 55% 15% 15%';
 
                 document.getElementById('experiences_infobox').style.height='300px';
-                document.getElementById('experience_section').style.display="block";
-                document.getElementById('experience_section_expanded').style.display="none";
+                document.getElementById('experiences_section').style.display="block";
+                document.getElementById('experiences_section_expanded').style.display="none";
                 document.getElementById('experiences_infobox').getElementsByTagName('button')[0].innerHTML='see more';
 
                 document.getElementById('education_infobox').style.height='600px';
@@ -252,8 +261,8 @@
 
                 /* Experience */
                 document.getElementById('experiences_infobox').style.height='300px';
-                document.getElementById('experience_section').style.display="block";
-                document.getElementById('experience_section_expanded').style.display="none";
+                document.getElementById('experiences_section').style.display="block";
+                document.getElementById('experiences_section_expanded').style.display="none";
                 document.getElementById('experiences_infobox').getElementsByTagName('button')[0].innerHTML='see more';
 
 
@@ -319,8 +328,8 @@
                 document.getElementById('infobox_container').style.gridTemplateColumns='15% 15% 15% 55%';
 
                 document.getElementById('experiences_infobox').style.height='300px';
-                document.getElementById('experience_section').style.display="block";
-                document.getElementById('experience_section_expanded').style.display="none";
+                document.getElementById('experiences_section').style.display="block";
+                document.getElementById('experiences_section_expanded').style.display="none";
                 document.getElementById('experiences_infobox').getElementsByTagName('button')[0].innerHTML='see more';
 
                 document.getElementById('education_infobox').style.height='300px';

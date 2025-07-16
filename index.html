@@ -23,7 +23,7 @@
                     <a href="https://www.linkedin.com/in/hunter-klassen0123/"  target="_blank"><img src="images/linkedin.png"/></a>
                 </div>
             </div>
-            <section id="infobox_container">
+            <section id="infobox_container" class="grid_infobox_container">
                 <div class="infobox" id="experiences_infobox" id="experiences_infobox_expanded">
                     <h1>EXPERIENCES</h1>
                     <hr/>
@@ -33,11 +33,12 @@
                         <img src="images/ea.svg"/>
                         <img src="images/unity_logo.png"/>
                         <img src="images/LizardWarriorHeadshotCropped3.png"/>
+                        <button onclick="expand('experiences')">See More</button>
                     </section>
                     <section id="experiences_section_expanded">
                         <p>HIDDEN CLASS</p>
+                        <button onclick="shrink('experiences')">See Less</button>
                     </section>
-                    <button onclick="experiencesExpansion()">See More</button>
                 </div>
                 <div class="infobox" id="education_infobox" id="education_infobox_expanded">
                     <h1>EDUCATION</h1>
