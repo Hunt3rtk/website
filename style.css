@@ -183,9 +183,6 @@ main section {
     width: auto;
     margin: 7px;
     align-items: center;
-}
-
-.infobox section {
     opacity: 0.5;
 }
 
@@ -235,7 +232,7 @@ main section {
 }
 
 #experiences_section {
-
+    display: block;
 }
 
 #experiences_section_expanded {

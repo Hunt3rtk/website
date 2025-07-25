@@ -23,7 +23,7 @@
                     <a href="https://www.linkedin.com/in/hunter-klassen0123/"  target="_blank"><img src="images/linkedin.png"/></a>
                 </div>
             </div>
-            <section id="infobox_container" class="grid_infobox_container">
+            <section id="infobox_container" class="grid_infobox_container" class="grid_infobox_container_experiences" class="grid_infobox_container_education" class="grid_infobox_container_skills" class="grid_infobox_container_volunteer">
                 <div class="infobox" id="experiences_infobox" id="experiences_infobox_expanded">
                     <h1>EXPERIENCES</h1>
                     <hr/>
@@ -48,11 +48,12 @@
                         <div class="content">
                             <p>UNIVERSITY OF THE FRASER VALLEY | BSC COMPUTER SCIENCE</p>
                         </div>
+                        <button onclick="expand('education')">See More</button>
                     </section>
                     <section id="education_section_expanded">
                         <p>HIDDEN CLASS</p>
+                        <button onclick="shrink('education')">See Less</button>
                     </section>
-                    <button onclick="educationExpansion()">See More</button>
                 </div>
                 <div class="infobox" id="skills_infobox" id="skills_infobox_expanded">
                     <h1>SKILLS</h1>
@@ -62,22 +63,24 @@
                         <img src="images/python.png"/>
                         <img src="images/php.png"/>
                         <img src="images/html_css.png"/>
+                        <button onclick="expand('skills')">See More</button>
                     </section>
                     <section id="skills_section_expanded">
                         <p>HIDDEN CLASS</p>
+                        <button onclick="shrink('skills')">See Less</button>
                     </section>
-                    <button onclick="skillsExpansion()">See More</button>
                 </div>
                 <div class="infobox" id="volunteer_infobox" id="volunteer_infobox_expanded">
                     <h1>VOLUNTEERING</h1>
                     <hr/>
                     <section id="volunteer_section">
                         <p>MINI CONTENT</p>
+                        <button onclick="expand('volunteer')">See More</button>
                     </section>
                     <section id="volunteer_section_expanded">
                         <p>HIDDEN CLASS</p>
+                        <button onclick="shrink('volunteer')">See Less</button>
                     </section>
-                    <button onclick="volunteerExpansion()">See More</button>
                 </div>
             </section>
         </main>
