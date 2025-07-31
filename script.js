@@ -2,16 +2,13 @@
 function expand(category) {
     switch (category) {
         case 'experiences':
-            handleExpansion('experiences', '2fr 1fr 1fr 1fr');
+            handleExpansion('experiences', '2fr 1fr 1fr');
             break;
         case 'education':
-            handleExpansion('education', '1fr 2fr 1fr 1fr');
+            handleExpansion('education', '1fr 2fr 1fr');
             break;
         case 'skills':
-            handleExpansion('skills', '1fr 1fr 2fr 1fr');
-            break;
-        case 'volunteer':
-            handleExpansion('volunteer', '1fr 1fr 1fr 2fr');
+            handleExpansion('skills', '1fr 1fr 2fr');
             break;
         default:
             break;
@@ -29,9 +26,6 @@ function shrink(category) {
             break;
         case 'skills':
             handleShrink('skills');
-            break;
-        case 'volunteer':
-            handleShrink('volunteer');
             break;
         default:
             break;
@@ -65,14 +59,6 @@ function handleExpansion(category, gridColumns) {
     document.getElementById('skills_section_expanded').style.display="none";
     document.getElementById('skills_infobox').getElementsByTagName('button')[0].innerHTML='see more';
 
-
-    //Reset Volunteer
-    document.getElementById('volunteer_infobox').style.height='300px';
-    document.getElementById('volunteer_infobox').style.boxShadow='gray 0px 0px 10px 2px';
-    document.getElementById('volunteer_section').style.display="flex";
-    document.getElementById('volunteer_section_expanded').style.display="none";
-    document.getElementById('volunteer_infobox').getElementsByTagName('button')[0].innerHTML='see more';
-
     //* Handle the expansion of the clicked section *//
 
     let mobile = window.matchMedia("(max-width: 1000px)");
@@ -105,7 +91,7 @@ function handleShrink(category) {
     if (mobile.matches) {
         document.getElementById('infobox_container').style.gridTemplateColumns='1fr';
     } else {
-        document.getElementById('infobox_container').style.gridTemplateColumns='1fr 1fr 1fr 1fr';
+        document.getElementById('infobox_container').style.gridTemplateColumns='1fr 1fr 1fr';
     }
 
     document.getElementById(category + '_infobox').style.height='300px';

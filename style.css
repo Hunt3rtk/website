@@ -170,7 +170,7 @@ main section {
 }
 @media only screen and (min-width: 1001px) {
     .grid_infobox_container {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
@@ -240,15 +240,30 @@ main section {
     display: block;
 }
 
+/* EXPERIENCE SECTION EXPANDED */
+
 #experiences_section_expanded {
     display: none;
+    max-height: 80%;
+    overflow: auto;
+
+    text-align: left;
+    color: var(--grey);
+}
+
+#experiences_section_expanded h4 {
+    color: white;
+    margin-bottom: 0px;
+}
+
+#experiences_section_expanded h6 {
+    margin: 0px;
 }
 
 /* EDUCATION INFOBOX */
 
 #education_infobox {
     display: block;
-
 }
 
 #education_infobox_expanded {
@@ -263,6 +278,10 @@ main section {
 
 #education_section_expanded {
     display: none;
+    max-height: 80%;
+    overflow: auto;
+
+    text-align: left;
 }
 
 #education_infobox {
@@ -277,10 +296,6 @@ main section {
     float: left;
     display: inline;
     justify-self: start;
-}
-
-#education_section_expanded {
-    display: none;
 }
 
 /* SKILL INFOBOX */
@@ -300,28 +315,10 @@ main section {
 
 #skills_section_expanded {
     display: none;
+    max-height: 80%;
+    overflow: auto;
 }
 
 #skills_section img {
     height: 64px;
-}
-
-/* VOLUNTEER INFOBOX */
-
-#volunteer_infobox {
-    display: block;
-
-}
-
-#volunteer_infobox_expanded {
-    display: none;
-    height: 600px;
-}
-
-#volunteer_section {
-    display: block;
-}
-
-#volunteer_section_expanded {
-    display: none;
 }
