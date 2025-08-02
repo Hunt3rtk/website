@@ -8,10 +8,10 @@
     --murkyblue: #696191;
     --murkybluelight: #6e65c7;
     --swampgreen: #C8CD7D;
-    --neonswampgreen: #CCFC5B;
+    --neonswampgreen: #ccfc5b;
     --darkneonswampgreen: #86A63C;
     --blueblack: #0B1226;
-    --bluegrey: #101B38;
+    --bluegrey: #101b38;
     --grey: #cacaca;
 }
 
@@ -24,8 +24,26 @@ html {
 body {
     margin: 0;
     background-image: linear-gradient(0deg, var(--bluegrey), var(--murkyblue) 40%, var(--bluegrey) 90%);
+    background-color: var(--bluegrey);
 
     scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(16, 27, 56, 0.3);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--grey);
+    border-radius: 5px;
+
+    box-shadow:
+        inset 0px 0px 6px 2px var(--blueblack)
 }
 
 main {
@@ -222,6 +240,81 @@ main section {
     opacity: 1;
 }
 
+.infobox ::-webkit-scrollbar-thumb {
+    background: var(--neonswampgreen);
+    border-radius: 5px;
+
+    box-shadow:
+        inset 0px 0px 6px 2px var(--darkneonswampgreen)
+}
+
+/* Expanded Styling */
+
+.section_expanded {
+    display: none;
+    max-height: 80%;
+    overflow: auto;
+
+    text-align: left;
+    color: var(--grey);
+}
+
+.section_expanded h2 {
+    width: fit-content;
+    text-align: center;
+    justify-self: center;
+    padding: 5px 20px 5px 20px;
+    margin: 30px 10px 30px 10px;
+
+    background-color: var(--neonswampgreen);
+    border-radius: 1em;
+    box-shadow:
+        inset 0px 0px 10px 6px var(--darkneonswampgreen),
+        gray 0px 0px 4px 2px;
+
+    font-weight: bolder;
+    color: var(--bluegrey);
+}
+
+.section_expanded h3 {
+    color: white;
+    margin-bottom: 0px;
+    width: fit-content;
+}
+
+.section_expanded h4 {
+    width: fit-content;
+    margin: 0px;
+}
+
+.section_expanded img {
+    width: auto;
+    margin: 7px;
+    align-items: center;
+    opacity: 0.5;
+}
+
+.section_expanded ul {
+    list-style-type: "~";
+    list-style-position: inside;
+}
+
+.section_expanded li {
+    justify-content: center;
+}
+
+.section_expanded li::marker{
+    font-size: .8em;
+}
+
+.section_expanded p {
+    margin: 0px;
+    padding: 0px;
+    font-size: .7em;
+    float: none;
+    line-height: 18px;
+}
+
 /* EXPERIENCE INFOBOX */
 
 #experiences_infobox {
@@ -251,13 +344,60 @@ main section {
     color: var(--grey);
 }
 
-#experiences_section_expanded h4 {
-    color: white;
-    margin-bottom: 0px;
+#experiences_section_expanded h2 {
+    width: fit-content;
+    text-align: center;
+    justify-self: center;
+    padding: 5px 20px 5px 20px;
+    margin: 30px 10px 30px 10px;
+
+    background-color: var(--neonswampgreen);
+    border-radius: 1em;
+    box-shadow:
+        inset 0px 0px 10px 6px var(--darkneonswampgreen),
+        gray 0px 0px 4px 2px;
+
+    font-weight: bolder;
+    color: var(--bluegrey);
 }
 
-#experiences_section_expanded h6 {
+#experiences_section_expanded h3 {
+    color: white;
+    margin-bottom: 0px;
+    width: fit-content;
+}
+
+#experiences_section_expanded h4 {
+    width: fit-content;
     margin: 0px;
+}
+
+#experiences_section_expanded img {
+    width: auto;
+    margin: 7px;
+    align-items: center;
+    opacity: 0.5;
+}
+
+#experiences_section_expanded ul {
+    list-style-type: "~";
+    list-style-position: inside;
+}
+
+#experiences_section_expanded li {
+    justify-content: center;
+}
+
+#experiences_section_expanded li::marker{
+    font-size: .8em;
+}
+
+#experiences_section_expanded p {
+    margin: 0px;
+    padding: 0px;
+    font-size: .7em;
+    float: none;
+    line-height: 18px;
 }
 
 /* EDUCATION INFOBOX */
@@ -293,7 +433,6 @@ main section {
 
 #ufv_icon {
     border-radius: 50%;
-    float: left;
     display: inline;
     justify-self: start;
 }

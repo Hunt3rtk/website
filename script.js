@@ -74,7 +74,7 @@ function handleExpansion(category, gridColumns) {
 
     // Set the height and box shadow for the expanded section
     document.getElementById(category + '_infobox').style.height='600px';
-    document.getElementById(category +'_infobox').style.boxShadow='inset 0px 0px 6px 6px var(--darkneonswampgreen), gray 0px 0px 10px 2px';
+    document.getElementById(category +'_infobox').style.boxShadow='inset 0px 0px 6px 6px gray, gray 0px 0px 10px 2px';
 
     document.getElementById(category + '_section').style.display="none";
     document.getElementById(category + '_section_expanded').style.display="block";
