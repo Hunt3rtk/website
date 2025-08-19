@@ -13,6 +13,7 @@
     --blueblack: #0B1226;
     --bluegrey: #101b38;
     --grey: #cacaca;
+    --white: #efefef;
 }
 
 html {
@@ -27,6 +28,26 @@ body {
     background-color: var(--bluegrey);
 
     scroll-behavior: smooth;
+}
+
+button {
+    color: var(--bluegrey);
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    text-transform: lowercase;
+
+    border: none;
+    background-image: linear-gradient(var(--neonswampgreen), var(--darkneonswampgreen));
+    box-shadow:
+        inset 0px 0px 6px 6px var(--darkneonswampgreen),
+        gray 0px 0px 4px 2px;
+    border-radius: 15px;
+
+    cursor: pointer;
+}
+a {
+    color: var(--neonswampgreen);
+    text-decoration: none;
 }
 
 ::-webkit-scrollbar {
@@ -185,6 +206,11 @@ main section {
     .grid_infobox_container {
         grid-template-columns: 1fr;
     }
+
+    .section_expanded .content {
+    margin-left: 0;
+    margin-right: 0;
+    }
 }
 @media only screen and (min-width: 1001px) {
     .grid_infobox_container {
@@ -210,11 +236,6 @@ main section {
 }
 
 .infobox button {
-    color: var(--bluegrey);
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 700;
-    text-transform: lowercase;
-
     z-index: 1;
     position: absolute;
     bottom: 20px;
@@ -223,15 +244,6 @@ main section {
     left: 0;
     right: 0;
     margin: auto;
-
-    border: none;
-    background-image: linear-gradient(var(--neonswampgreen), var(--darkneonswampgreen));
-    box-shadow:
-        inset 0px 0px 6px 6px var(--darkneonswampgreen),
-        gray 0px 0px 4px 2px;
-    border-radius: 15px;
-
-    cursor: pointer;
 }
 
 .infobox button:hover {
@@ -264,27 +276,50 @@ main section {
     text-align: center;
     justify-self: center;
     padding: 5px 20px 5px 20px;
-    margin: 30px 10px 30px 10px;
+    margin: 60px 10px 60px 10px;
 
-    background-color: var(--neonswampgreen);
+    background-color: var(--blueblack);
     border-radius: 1em;
     box-shadow:
-        inset 0px 0px 10px 6px var(--darkneonswampgreen),
+        inset 0px 0px 12px 12px var(--bluegrey),
         gray 0px 0px 4px 2px;
 
     font-weight: bolder;
-    color: var(--bluegrey);
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.section_expanded .content {
+    margin-left: 5em;
+    margin-right: 5em;;
+}
+
+.section_expanded .content button {
+    font-size: .6em;
+    display: block;
+    position: static;
+    width: 60px;
+    height: 20px;
+    margin: 2em 0 2em 0;
+}
+
+.section_expanded .content button a {
+    color: var(--blueblack);
+    text-decoration: none;
 }
 
 .section_expanded h3 {
-    color: white;
+    color: var(--white);
+    text-decoration: underline;
+    margin-top: 2em;
     margin-bottom: 0px;
     width: fit-content;
 }
 
 .section_expanded h4 {
     width: fit-content;
-    margin: 0px;
+    margin-top: 0;
+    margin-bottom: 1em;
 }
 
 .section_expanded img {
@@ -315,6 +350,17 @@ main section {
     line-height: 18px;
 }
 
+@media only screen and (max-width: 1000px) {
+    .section_expanded .content {
+    margin-left: 0;
+    margin-right: 0;
+    }
+
+    .section_expanded .content button{
+    margin-left: 1em; 
+    }
+}
+
 /* EXPERIENCE INFOBOX */
 
 #experiences_infobox {
@@ -340,36 +386,16 @@ main section {
     max-height: 80%;
     overflow: auto;
 
+    margin: 0;
+
     text-align: left;
     color: var(--grey);
-}
-
-#experiences_section_expanded h2 {
-    width: fit-content;
-    text-align: center;
-    justify-self: center;
-    padding: 5px 20px 5px 20px;
-    margin: 30px 10px 30px 10px;
-
-    background-color: var(--neonswampgreen);
-    border-radius: 1em;
-    box-shadow:
-        inset 0px 0px 10px 6px var(--darkneonswampgreen),
-        gray 0px 0px 4px 2px;
-
-    font-weight: bolder;
-    color: var(--bluegrey);
 }
 
 #experiences_section_expanded h3 {
     color: white;
     margin-bottom: 0px;
     width: fit-content;
-}
-
-#experiences_section_expanded h4 {
-    width: fit-content;
-    margin: 0px;
 }
 
 #experiences_section_expanded img {
