@@ -86,7 +86,7 @@ main {
 }
 
 .profile h4 {
-    width: 172px;
+    width: 275px;
     color: var(--darkneonswampgreen);
     text-align: center;
     margin-top: 0px;
@@ -105,7 +105,7 @@ main {
 /* The typing effect */
 @keyframes typing {
   from { width: 0 }
-  to { width: 172px }
+  to { width: 275px }
 }
 
 /* The typewriter cursor effect */
